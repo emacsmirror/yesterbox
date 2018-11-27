@@ -59,6 +59,8 @@
 
 ;;; Code:
 
+(require 'cl)
+
 (defvar yesterbox-days '(1 2 3 (4 . 6) (7 . 10))
   "*List of days to search for in yesterbox.
 Each element should either be an integer or a dotted pair of integers.
