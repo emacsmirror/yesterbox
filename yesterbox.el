@@ -6,7 +6,7 @@
 ;; Created: 23 Nov 2018
 ;; Keywords: mail
 ;; URL: http://github.com/sje30/yesterbox
-
+;; Package-Requires: ((emacs "24"))
 ;; This file is not part of GNU Emacs.
 
 ;; This file is free software; you can redistribute it and/or modify
