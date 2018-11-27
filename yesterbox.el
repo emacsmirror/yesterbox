@@ -1,5 +1,4 @@
-;;; yesterbox.el --- Count number of inbox messages by day.
-
+;;; yesterbox.el --- Count number of inbox messages by day. -*- lexical-binding: t; -*-
 ;; Copyright (C) 2018 Stephen J Eglen
 
 ;; Author: Stephen J. Eglen <sje30@cam.ac.uk>
