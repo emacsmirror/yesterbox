@@ -116,13 +116,13 @@ To run the search for a given line, simply press RETURN on the
 correspodning line."
   (interactive)
   (let*
-      ((yesterbox-searches (mapcar 'yesterbox-search-string
+      ((yesterbox-searches (mapcar '#yesterbox-search-string
 				   yesterbox-days))
-       (yesterbox-counts   (mapcar 'yesterbox-count-matches
+       (yesterbox-counts   (mapcar '#yesterbox-count-matches
 				   yesterbox-searches)))
     (pop-to-buffer "*yesterbox*" nil)
     (yesterbox-mode)
-    (setq tabulated-list-entries (mapcar* 'yesterbox-make-line
+    (setq tabulated-list-entries (mapcar* '#yesterbox-make-line
 					  yesterbox-searches
 					  yesterbox-days
 					  yesterbox-counts))
