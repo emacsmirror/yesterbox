@@ -52,6 +52,9 @@
 ;; messages from today you can include 0 in that list, but then you
 ;; might be tempted to work on today's messages...
 
+;; The program also assumes your primary inbox is called "inbox";
+;; change the variable `yesterbox-inbox' if you use a different name.
+
 ;; TODO:
 ;; When quitting the search buffer, maybe return to *yesterbox* rather
 ;; than the mu main header.  Remember window configuration?
@@ -65,15 +68,22 @@
 Each element should either be an integer or a dotted pair of integers.
 For dotted pairs, (a . b), we search for days A through B inclusive.")
 
+(defvar yesterbox-inbox "inbox"
+  "*Name of your primary inbox.")
+
 (defun yesterbox-search-string (n)
   "Return a mu search string to find inbox messages from N days ago.
 If N is an integer, search for N days ago.
-If N is a dotted pair (a . b), search for messages between a and b days ago."
+If N is a dotted pair (a . b), search for messages between a and b days ago.
+The name of your inbox is stored in `yesterbox-inbox'."
   (if (consp n)
-      (format "maildir:/inbox AND date:%s..%s"
+      (format "maildir:/%s AND date:%s..%s"
+	      yesterbox-inbox
 	      (yesterbox-n-days-ago (cdr n))
 	      (yesterbox-n-days-ago (car n)))
-    (format "maildir:/inbox AND date:%s" (yesterbox-n-days-ago n))))
+    (format "maildir:/%s AND date:%s"
+	    yesterbox-inbox
+	    (yesterbox-n-days-ago n))))
 	  
 (defun yesterbox-n-days-ago (n)
   "Return N days ago as an absolute date."
