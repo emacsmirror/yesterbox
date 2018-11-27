@@ -82,7 +82,7 @@ If N is a dotted pair (a . b), search for messages between a and b days ago."
 		      (time-subtract (current-time) (days-to-time n))))
 
 (defun yesterbox-count-matches (search)
-  "Return number of matches to SEARCH string."
+  "Return number of messages that match SEARCH string."
   (string-to-number
    (shell-command-to-string
     (format "mu find %s | wc -l" search))))
