@@ -53,7 +53,11 @@
 ;; might be tempted to work on today's messages...
 
 ;; The program also assumes your primary inbox is called "inbox";
-;; change the variable `yesterbox-inbox' if you use a different name.
+;; change the variable `yesterbox-inbox' if you use a different
+;; name. Setting the variable to "inbox/" (note the final forward
+;; slash) will search for the pattern "inbox" and look foremails in
+;; multiple account. See https://github.com/sje30/yesterbox/issues/1
+;; for details.
 
 ;; TODO:
 ;; When quitting the search buffer, maybe return to *yesterbox* rather
@@ -84,7 +88,7 @@ The name of your inbox is stored in `yesterbox-inbox'."
     (format "maildir:/%s AND date:%s"
 	    yesterbox-inbox
 	    (yesterbox-n-days-ago n))))
-	  
+
 (defun yesterbox-n-days-ago (n)
   "Return N days ago as an absolute date."
   (format-time-string "%Y%m%d"
@@ -108,7 +112,7 @@ The name of your inbox is stored in `yesterbox-inbox'."
 (define-derived-mode yesterbox-mode
   tabulated-list-mode "ybox" "Major mode for `yesterbox'"
   (setq tabulated-list-format [("Days" 4 t :right-align t)
-                               ("Count" 6 t :right-align t)
+			       ("Count" 6 t :right-align t)
 			       ])
   (setq tabulated-list-padding 1)
   (setq tabulated-list-sort-key (cons "Days" nil))
@@ -137,7 +141,7 @@ correspodning line."
 					  yesterbox-days
 					  yesterbox-counts))
     (tabulated-list-print t)))
-  
+
 
 
 (defun yesterbox-make-line (search d count)
