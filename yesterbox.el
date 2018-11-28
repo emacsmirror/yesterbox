@@ -55,9 +55,11 @@
 ;; The program also assumes your primary inbox is called "inbox";
 ;; change the variable `yesterbox-inbox' if you use a different
 ;; name. Setting the variable to "inbox/" (note the final forward
-;; slash) will search for the pattern "inbox" and look foremails in
-;; multiple account. See https://github.com/sje30/yesterbox/issues/1
+;; slash) will search for the pattern "inbox" and look for emails in
+;; multiple accounts. See https://github.com/sje30/yesterbox/issues/1
 ;; for details.
+
+;; Acknowledgements: Thanks to Laurent Gatto for testing and feedback.
 
 ;; TODO:
 ;; When quitting the search buffer, maybe return to *yesterbox* rather
