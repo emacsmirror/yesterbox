@@ -67,7 +67,7 @@
 
 ;;; Code:
 
-(require 'cl)
+(require 'cl-lib)
 
 (defvar yesterbox-days '(1 2 3 (4 . 6) (7 . 10))
   "*List of days to search for in yesterbox.
@@ -138,10 +138,10 @@ correspodning line."
 				   yesterbox-searches)))
     (pop-to-buffer "*yesterbox*" nil)
     (yesterbox-mode)
-    (setq tabulated-list-entries (mapcar* #'yesterbox-make-line
-					  yesterbox-searches
-					  yesterbox-days
-					  yesterbox-counts))
+    (setq tabulated-list-entries (cl-mapcar #'yesterbox-make-line
+					    yesterbox-searches
+					    yesterbox-days
+					    yesterbox-counts))
     (tabulated-list-print t)))
 
 
