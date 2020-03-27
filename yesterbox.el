@@ -1,12 +1,12 @@
-;;; yesterbox.el --- Count number of inbox messages by day. -*- lexical-binding: t; -*-
+;;; yesterbox.el --- Count number of inbox messages by day -*- lexical-binding: t; -*-
 ;; Copyright (C) 2018 Stephen J Eglen
 
 ;; Author: Stephen J. Eglen <sje30@cam.ac.uk>
-;; Version: 0.1
+;; Version: 0.2
 ;; Created: 23 Nov 2018
 ;; Keywords: mail
 ;; URL: http://github.com/sje30/yesterbox
-;; Package-Requires: ((emacs "24"))
+;; Package-Requires: ((emacs "24.3"))
 ;; This file is not part of GNU Emacs.
 
 ;; This file is free software; you can redistribute it and/or modify
